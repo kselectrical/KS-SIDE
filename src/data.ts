@@ -1,10 +1,5 @@
 import type { TechnicalService } from './types';
 
-export const adminCredentials = {
-  username: 'admin',
-  password: 'admin123'
-};
-
 export interface BusinessConfig {
   name: string;
   tagline: string;
