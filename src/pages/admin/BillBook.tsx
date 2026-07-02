@@ -70,28 +70,28 @@ export const BillBook: React.FC<BillBookProps> = ({
         <div className="bg-emerald-50/50 border border-emerald-100 rounded-xl p-3 sm:p-4 flex items-center space-x-3">
           <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center font-black text-sm sm:text-base">₹</div>
           <div>
-            <span className="text-[8px] sm:text-[9px] text-gray-400 font-black uppercase tracking-wider block">Total Invoiced</span>
+            <span className="text-[8px] sm:text-[9px] text-gray-500 font-black uppercase tracking-wider block">Total Invoiced</span>
             <span className="text-gray-900 font-black text-sm sm:text-lg">₹{totalBilledVal}</span>
           </div>
         </div>
         <div className="bg-blue-50/50 border border-blue-100 rounded-xl p-3 sm:p-4 flex items-center space-x-3">
           <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-blue-100 text-brand-blue flex items-center justify-center text-gray-500"><FileText size={16} /></div>
           <div>
-            <span className="text-[8px] sm:text-[9px] text-gray-400 font-black uppercase tracking-wider block">Total Invoices</span>
+            <span className="text-[8px] sm:text-[9px] text-gray-500 font-black uppercase tracking-wider block">Total Invoices</span>
             <span className="text-gray-900 font-black text-sm sm:text-lg">{bookings.length} Bills</span>
           </div>
         </div>
         <div className="bg-amber-50/50 border border-amber-100 rounded-xl p-3 sm:p-4 flex items-center space-x-3">
           <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center font-black text-xs sm:text-sm">!</div>
           <div>
-            <span className="text-[8px] sm:text-[9px] text-gray-400 font-black uppercase tracking-wider block">Pending Bills</span>
+            <span className="text-[8px] sm:text-[9px] text-gray-500 font-black uppercase tracking-wider block">Pending Bills</span>
             <span className="text-gray-900 font-black text-sm sm:text-lg">{pendingBillsCount} Unpaid</span>
           </div>
         </div>
         <div className="bg-green-50/50 border border-green-100 rounded-xl p-3 sm:p-4 flex items-center space-x-3">
           <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-green-100 text-green-700 flex items-center justify-center font-black text-xs sm:text-sm">✓</div>
           <div>
-            <span className="text-[8px] sm:text-[9px] text-gray-400 font-black uppercase tracking-wider block">Paid Invoices</span>
+            <span className="text-[8px] sm:text-[9px] text-gray-500 font-black uppercase tracking-wider block">Paid Invoices</span>
             <span className="text-gray-900 font-black text-sm sm:text-lg">{bookings.filter(b => b && b.status === 'Completed').length} Paid</span>
           </div>
         </div>
@@ -120,7 +120,7 @@ export const BillBook: React.FC<BillBookProps> = ({
       <div className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm flex flex-col sm:flex-row items-center gap-4">
         {/* Search Query */}
         <div className="flex-1 flex border border-gray-250 rounded-lg overflow-hidden focus-within:border-brand-blue transition-all bg-white w-full">
-          <div className="bg-gray-50 border-r border-gray-200 px-3 py-2 text-gray-400 flex items-center shrink-0">
+          <div className="bg-gray-50 border-r border-gray-200 px-3 py-2 text-gray-500 flex items-center shrink-0">
             <Search size={14} />
           </div>
           <input
@@ -134,7 +134,7 @@ export const BillBook: React.FC<BillBookProps> = ({
 
         {/* Status Filter */}
         <div className="w-full sm:w-44 shrink-0 flex items-center space-x-2">
-          <label className="text-[10px] font-black text-gray-400 uppercase tracking-wider block">Status:</label>
+          <label className="text-[10px] font-black text-gray-500 uppercase tracking-wider block">Status:</label>
           <select
             value={billStatusFilter}
             onChange={(e) => setBillStatusFilter(e.target.value as 'All' | 'Pending' | 'Completed' | 'Cancelled')}
@@ -160,7 +160,7 @@ export const BillBook: React.FC<BillBookProps> = ({
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="bg-gray-50 border-b border-gray-200 text-[10px] font-black text-gray-400 uppercase tracking-wider select-none">
+                <tr className="bg-gray-50 border-b border-gray-200 text-[10px] font-black text-gray-500 uppercase tracking-wider select-none">
                   <th className="px-5 py-3.5">Invoice ID</th>
                   <th className="px-5 py-3.5">Bill Date</th>
                   <th className="px-5 py-3.5">Client Information</th>
@@ -185,7 +185,7 @@ export const BillBook: React.FC<BillBookProps> = ({
                       {/* Date */}
                       <td className="px-5 py-4 select-none">
                         {getSafeDate(b.createdAt).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' })}
-                        <span className="text-[9px] text-gray-400 block font-medium mt-0.5">
+                        <span className="text-[9px] text-gray-500 block font-medium mt-0.5">
                           {getSafeDate(b.createdAt).toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' })}
                         </span>
                       </td>
@@ -204,7 +204,7 @@ export const BillBook: React.FC<BillBookProps> = ({
                             <div key={idx} className="flex items-center text-[9px] font-bold text-gray-600 bg-gray-50 border border-gray-150 rounded px-1.5 py-0.5 w-max max-w-full">
                               <span className="truncate">{item.serviceName}</span>
                               {item.brand && <span className="text-[8px] bg-blue-50 text-brand-blue border border-blue-100 rounded px-1 ml-1 font-black shrink-0">{item.brand}</span>}
-                              <span className="text-[8px] text-gray-450 font-bold ml-1.5 shrink-0">x{item.quantity}</span>
+                              <span className="text-[8px] text-gray-500 font-bold ml-1.5 shrink-0">x{item.quantity}</span>
                             </div>
                           ))}
                         </div>
@@ -213,7 +213,7 @@ export const BillBook: React.FC<BillBookProps> = ({
                       {/* Price and Tax summary */}
                       <td className="px-5 py-4 text-right select-none">
                         <span className="text-gray-950 font-black text-sm block">₹{b.subtotal}</span>
-                        <span className="text-[9px] text-gray-400 block font-semibold mt-0.5">GST (18%): ₹{gst}</span>
+                        <span className="text-[9px] text-gray-500 block font-semibold mt-0.5">GST (18%): ₹{gst}</span>
                       </td>
 
                       {/* Status */}

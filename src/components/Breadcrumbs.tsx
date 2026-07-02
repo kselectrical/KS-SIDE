@@ -20,7 +20,7 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items }) => {
       </Link>
       {items.map((item, idx) => (
         <React.Fragment key={idx}>
-          <ChevronRight size={12} className="text-gray-400" />
+          <ChevronRight size={12} className="text-gray-500" />
           {item.path ? (
             <Link to={item.path} className="hover:text-brand-blue transition-colors">
               {item.label}

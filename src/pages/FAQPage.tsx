@@ -92,7 +92,7 @@ export const FAQPage: React.FC = () => {
                     <HelpCircle size={16} className="text-brand-blue shrink-0" />
                     <span>{faq.q}</span>
                   </div>
-                  {isOpen ? <ChevronUp size={16} className="text-gray-400 shrink-0" /> : <ChevronDown size={16} className="text-gray-400 shrink-0" />}
+                  {isOpen ? <ChevronUp size={16} className="text-gray-500 shrink-0" /> : <ChevronDown size={16} className="text-gray-500 shrink-0" />}
                 </button>
 
                 {/* Content Panel */}

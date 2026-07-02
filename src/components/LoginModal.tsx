@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X, Lock, User, Sparkles, Loader } from 'lucide-react';
+import { adminCredentials } from '../data';
 import { auth, isFirebaseConfigured } from '../firebase';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 
@@ -24,7 +25,6 @@ export const LoginModal: React.FC<LoginModalProps> = ({
   // Admin State
   const [adminUser, setAdminUser] = useState('');
   const [adminPass, setAdminPass] = useState('');
-  const [isAdminLoading, setIsAdminLoading] = useState(false);
   const [error, setError] = useState('');
 
   if (!isOpen) return null;
@@ -86,29 +86,20 @@ export const LoginModal: React.FC<LoginModalProps> = ({
     }
   };
 
-  const handleAdminSubmit = async (e: React.FormEvent) => {
+  const handleAdminSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setError('');
-    setIsAdminLoading(true);
-
-    try {
-      if (!isFirebaseConfigured || !auth) {
-        throw new Error("Authentication system is not configured. Please contact support.");
-      }
-
-      await signInWithEmailAndPassword(auth, adminUser.trim(), adminPass);
-
+    if (
+      adminUser.trim() === adminCredentials.username &&
+      adminPass === adminCredentials.password
+    ) {
+      setError('');
       onLoginSuccess('admin');
       onClose();
       // Reset fields
       setAdminUser('');
       setAdminPass('');
-    } catch (err) {
-      const authError = err as { message?: string };
-      console.error("Admin Auth failed:", err);
-      setError(authError.message || 'Invalid admin email or password.');
-    } finally {
-      setIsAdminLoading(false);
+    } else {
+      setError('Invalid admin username or password.');
     }
   };
 
@@ -123,8 +114,9 @@ export const LoginModal: React.FC<LoginModalProps> = ({
         
         {/* Close Button */}
         <button 
+          aria-label="Close Modal"
           onClick={onClose}
-          className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 p-1.5 rounded-full hover:bg-gray-50 transition-all cursor-pointer select-none"
+          className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 p-2 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full hover:bg-gray-50 transition-all cursor-pointer select-none"
         >
           <X size={16} />
         </button>
@@ -135,7 +127,7 @@ export const LoginModal: React.FC<LoginModalProps> = ({
             <Sparkles size={20} className="animate-pulse" />
           </div>
           <h2 className="text-gray-900 font-black text-lg tracking-tight">KS Portal Access</h2>
-          <p className="text-[10px] text-gray-450 font-bold uppercase tracking-wider mt-0.5">Secure authentication gate</p>
+          <p className="text-[10px] text-gray-500 font-bold uppercase tracking-wider mt-0.5">Secure authentication gate</p>
         </div>
 
         {/* Tab Selection */}
@@ -178,9 +170,9 @@ export const LoginModal: React.FC<LoginModalProps> = ({
               <div className="space-y-3.5">
                 {/* Full Name */}
                 <div className="space-y-1">
-                  <label className="text-[10px] font-black text-gray-400 uppercase tracking-wider block">Your Name</label>
+                  <label className="text-[10px] font-black text-gray-500 uppercase tracking-wider block">Your Name</label>
                   <div className="flex border border-gray-250 rounded-lg overflow-hidden focus-within:border-brand-blue focus-within:ring-1 focus-within:ring-blue-100 transition-all bg-white">
-                    <div className="border-r border-gray-200 px-2.5 py-2 text-gray-400 flex items-center bg-gray-50">
+                    <div className="border-r border-gray-200 px-2.5 py-2 text-gray-500 flex items-center bg-gray-50">
                       <User size={13} />
                     </div>
                     <input
@@ -199,10 +191,10 @@ export const LoginModal: React.FC<LoginModalProps> = ({
 
                 {/* Mobile Number */}
                 <div className="space-y-1">
-                  <label className="text-[10px] font-black text-gray-400 uppercase tracking-wider block">Mobile Number</label>
+                  <label className="text-[10px] font-black text-gray-500 uppercase tracking-wider block">Mobile Number</label>
                   <div className="flex border border-gray-250 rounded-lg overflow-hidden focus-within:border-brand-blue focus-within:ring-1 focus-within:ring-blue-100 transition-all bg-white">
-                    <div className="border-r border-gray-200 px-2.5 py-2 text-gray-400 flex items-center bg-gray-50">
-                      <span className="text-xs font-bold text-gray-400">+91</span>
+                    <div className="border-r border-gray-200 px-2.5 py-2 text-gray-500 flex items-center bg-gray-50">
+                      <span className="text-xs font-bold text-gray-500">+91</span>
                     </div>
                     <input
                       type="tel"
@@ -239,7 +231,7 @@ export const LoginModal: React.FC<LoginModalProps> = ({
                 )}
               </button>
 
-              <p className="text-[9px] text-gray-450 font-semibold leading-normal text-center">
+              <p className="text-[9px] text-gray-500 font-semibold leading-normal text-center">
                 Your data is fully secure. No OTP required. Same-day service activation.
               </p>
             </form>
@@ -250,20 +242,20 @@ export const LoginModal: React.FC<LoginModalProps> = ({
               <div className="space-y-3.5 text-left">
                 {/* Username */}
                 <div className="space-y-1">
-                  <label className="text-[10px] font-black text-gray-400 uppercase tracking-wider">Email Address</label>
+                  <label className="text-[10px] font-black text-gray-500 uppercase tracking-wider">Username</label>
                   <div className="flex border border-gray-250 rounded-lg overflow-hidden focus-within:border-brand-blue focus-within:ring-1 focus-within:ring-blue-100 transition-all bg-white">
-                    <div className="border-r border-gray-200 px-2.5 py-2 text-gray-400 flex items-center bg-gray-50">
+                    <div className="border-r border-gray-200 px-2.5 py-2 text-gray-500 flex items-center bg-gray-50">
                       <User size={13} />
                     </div>
                     <input
-                      type="email"
+                      type="text"
                       required
                       value={adminUser}
                       onChange={(e) => {
                         setAdminUser(e.target.value);
                         if (error) setError('');
                       }}
-                      placeholder="Enter admin email"
+                      placeholder="Enter admin username"
                       className="flex-1 bg-white text-gray-800 text-xs font-semibold px-2.5 py-2 focus:outline-none placeholder-gray-400"
                     />
                   </div>
@@ -271,9 +263,9 @@ export const LoginModal: React.FC<LoginModalProps> = ({
 
                 {/* Password */}
                 <div className="space-y-1">
-                  <label className="text-[10px] font-black text-gray-400 uppercase tracking-wider">Password</label>
+                  <label className="text-[10px] font-black text-gray-500 uppercase tracking-wider">Password</label>
                   <div className="flex border border-gray-250 rounded-lg overflow-hidden focus-within:border-brand-blue focus-within:ring-1 focus-within:ring-blue-100 transition-all bg-white">
-                    <div className="border-r border-gray-200 px-2.5 py-2 text-gray-400 flex items-center bg-gray-50">
+                    <div className="border-r border-gray-200 px-2.5 py-2 text-gray-500 flex items-center bg-gray-50">
                       <Lock size={13} />
                     </div>
                     <input
@@ -296,17 +288,9 @@ export const LoginModal: React.FC<LoginModalProps> = ({
               {/* Submit Button */}
               <button
                 type="submit"
-                disabled={isAdminLoading}
-                className="w-full bg-brand-blue hover:bg-brand-blue-dark text-white rounded-lg py-2.5 text-xs font-bold uppercase tracking-wider transition-all shadow-sm hover:shadow cursor-pointer select-none active:scale-98 flex items-center justify-center"
+                className="w-full bg-brand-blue hover:bg-brand-blue-dark text-white rounded-lg py-2.5 text-xs font-bold uppercase tracking-wider transition-all shadow-sm hover:shadow cursor-pointer select-none active:scale-98"
               >
-                {isAdminLoading ? (
-                  <>
-                    <Loader size={13} className="animate-spin mr-1" />
-                    <span>Signing In...</span>
-                  </>
-                ) : (
-                  <span>Log In as Admin</span>
-                )}
+                Log In as Admin
               </button>
             </form>
           )}

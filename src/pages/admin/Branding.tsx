@@ -51,7 +51,7 @@ export const Branding: React.FC<BrandingProps> = ({ businessConfig, onUpdateBusi
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {/* Business Name */}
           <div className="space-y-1.5">
-            <label className="text-[10px] font-black text-gray-400 uppercase tracking-wider block">Company Name</label>
+            <label className="text-[10px] font-black text-gray-500 uppercase tracking-wider block">Company Name</label>
             <input
               type="text"
               required
@@ -63,7 +63,7 @@ export const Branding: React.FC<BrandingProps> = ({ businessConfig, onUpdateBusi
 
           {/* Tagline */}
           <div className="space-y-1.5">
-            <label className="text-[10px] font-black text-gray-400 uppercase tracking-wider block">Tagline Statement</label>
+            <label className="text-[10px] font-black text-gray-500 uppercase tracking-wider block">Tagline Statement</label>
             <input
               type="text"
               required
@@ -75,7 +75,7 @@ export const Branding: React.FC<BrandingProps> = ({ businessConfig, onUpdateBusi
 
           {/* Owner Name */}
           <div className="space-y-1.5">
-            <label className="text-[10px] font-black text-gray-400 uppercase tracking-wider block">Owner Name</label>
+            <label className="text-[10px] font-black text-gray-500 uppercase tracking-wider block">Owner Name</label>
             <input
               type="text"
               required
@@ -87,7 +87,7 @@ export const Branding: React.FC<BrandingProps> = ({ businessConfig, onUpdateBusi
 
           {/* Email */}
           <div className="space-y-1.5">
-            <label className="text-[10px] font-black text-gray-400 uppercase tracking-wider block">Official Email Address</label>
+            <label className="text-[10px] font-black text-gray-500 uppercase tracking-wider block">Official Email Address</label>
             <input
               type="email"
               required
@@ -99,7 +99,7 @@ export const Branding: React.FC<BrandingProps> = ({ businessConfig, onUpdateBusi
 
           {/* Contact Phone 1 */}
           <div className="space-y-1.5">
-            <label className="text-[10px] font-black text-gray-400 uppercase tracking-wider block">Primary Dispatch Contact (+91)</label>
+            <label className="text-[10px] font-black text-gray-500 uppercase tracking-wider block">Primary Dispatch Contact (+91)</label>
             <input
               type="text"
               required
@@ -111,7 +111,7 @@ export const Branding: React.FC<BrandingProps> = ({ businessConfig, onUpdateBusi
 
           {/* Contact Phone 2 */}
           <div className="space-y-1.5">
-            <label className="text-[10px] font-black text-gray-400 uppercase tracking-wider block">Backup Operator Contact (+91)</label>
+            <label className="text-[10px] font-black text-gray-500 uppercase tracking-wider block">Backup Operator Contact (+91)</label>
             <input
               type="text"
               value={brandContact2}
@@ -122,7 +122,7 @@ export const Branding: React.FC<BrandingProps> = ({ businessConfig, onUpdateBusi
 
           {/* Logo Path */}
           <div className="space-y-1.5">
-            <label className="text-[10px] font-black text-gray-400 uppercase tracking-wider block">Branding Logo Path</label>
+            <label className="text-[10px] font-black text-gray-500 uppercase tracking-wider block">Branding Logo Path</label>
             <input
               type="text"
               required
@@ -134,7 +134,7 @@ export const Branding: React.FC<BrandingProps> = ({ businessConfig, onUpdateBusi
 
           {/* Profile photo Path */}
           <div className="space-y-1.5">
-            <label className="text-[10px] font-black text-gray-400 uppercase tracking-wider block">Owner Profile Photo Path</label>
+            <label className="text-[10px] font-black text-gray-500 uppercase tracking-wider block">Owner Profile Photo Path</label>
             <input
               type="text"
               required
@@ -146,7 +146,7 @@ export const Branding: React.FC<BrandingProps> = ({ businessConfig, onUpdateBusi
 
           {/* Website URL */}
           <div className="space-y-1.5 md:col-span-2">
-            <label className="text-[10px] font-black text-gray-400 uppercase tracking-wider block">Official Web Domain URL</label>
+            <label className="text-[10px] font-black text-gray-500 uppercase tracking-wider block">Official Web Domain URL</label>
             <input
               type="text"
               required
@@ -158,7 +158,7 @@ export const Branding: React.FC<BrandingProps> = ({ businessConfig, onUpdateBusi
 
           {/* Google review link */}
           <div className="space-y-1.5 md:col-span-2">
-            <label className="text-[10px] font-black text-gray-400 uppercase tracking-wider block">Google Business Profile Review Link</label>
+            <label className="text-[10px] font-black text-gray-500 uppercase tracking-wider block">Google Business Profile Review Link</label>
             <input
               type="text"
               required

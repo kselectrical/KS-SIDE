@@ -81,7 +81,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ businessConfig }) => {
                   <Phone size={18} />
                 </div>
                 <div>
-                  <span className="text-[10px] text-gray-400 font-black uppercase tracking-wider block">Helpline Dispatch</span>
+                  <span className="text-[10px] text-gray-500 font-black uppercase tracking-wider block">Helpline Dispatch</span>
                   <a href={`tel:${businessConfig.contacts[0]}`} className="text-gray-900 font-extrabold text-sm sm:text-base hover:text-brand-blue block mt-0.5">
                     +91 {businessConfig.contacts[0]}
                   </a>
@@ -99,7 +99,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ businessConfig }) => {
                   <Mail size={18} />
                 </div>
                 <div>
-                  <span className="text-[10px] text-gray-400 font-black uppercase tracking-wider block">Official Mail</span>
+                  <span className="text-[10px] text-gray-500 font-black uppercase tracking-wider block">Official Mail</span>
                   <a href={`mailto:${businessConfig.email}`} className="text-gray-900 font-extrabold text-sm sm:text-base hover:text-brand-blue block mt-0.5 truncate">
                     {businessConfig.email}
                   </a>
@@ -112,7 +112,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ businessConfig }) => {
                   <MapPin size={18} />
                 </div>
                 <div>
-                  <span className="text-[10px] text-gray-400 font-black uppercase tracking-wider block">Service Coverage Zone</span>
+                  <span className="text-[10px] text-gray-500 font-black uppercase tracking-wider block">Service Coverage Zone</span>
                   <span className="text-gray-900 font-extrabold text-sm block mt-0.5">
                     Noida Extension, Gurgaon, Delhi NCR, India
                   </span>
@@ -131,7 +131,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ businessConfig }) => {
             
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-1.5">
-                <label className="text-[10px] font-black text-gray-400 uppercase tracking-wider block">Your Name</label>
+                <label className="text-[10px] font-black text-gray-500 uppercase tracking-wider block">Your Name</label>
                 <input
                   type="text"
                   required
@@ -143,7 +143,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ businessConfig }) => {
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-[10px] font-black text-gray-400 uppercase tracking-wider block">Email Address</label>
+                <label className="text-[10px] font-black text-gray-500 uppercase tracking-wider block">Email Address</label>
                 <input
                   type="email"
                   required
@@ -155,7 +155,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ businessConfig }) => {
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-[10px] font-black text-gray-400 uppercase tracking-wider block">Explain Requirement</label>
+                <label className="text-[10px] font-black text-gray-500 uppercase tracking-wider block">Explain Requirement</label>
                 <textarea
                   required
                   rows={4}

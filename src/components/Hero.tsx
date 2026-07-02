@@ -60,8 +60,8 @@ export const Hero: React.FC<HeroProps> = ({
             {/* Core Trust Indicators Grid */}
             <div className="grid grid-cols-2 gap-4 max-w-md pt-2 select-none">
               <div className="flex items-center space-x-2.5 bg-white border border-slate-200 py-2.5 px-3.5 rounded-xl shadow-xs">
-                <div className="w-8 h-8 rounded-lg bg-orange-50 text-brand-orange flex items-center justify-center shrink-0">
-                  <Star size={16} fill="#F97316" className="text-brand-orange" />
+                <div className="w-8 h-8 rounded-lg bg-orange-50 text-orange-600 flex items-center justify-center shrink-0">
+                  <Star size={16} fill="#F97316" className="text-orange-600" />
                 </div>
                 <div>
                   <span className="text-slate-900 font-extrabold text-sm block">4.9 Star Rating</span>

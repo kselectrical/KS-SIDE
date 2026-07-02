@@ -11,7 +11,7 @@ export const Footer: React.FC<FooterProps> = ({ businessConfig }) => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 border-t border-gray-800 text-gray-400 font-sans">
+    <footer className="bg-gray-900 border-t border-gray-800 text-gray-500 font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           
@@ -46,7 +46,7 @@ export const Footer: React.FC<FooterProps> = ({ businessConfig }) => {
               </div>
             </div>
 
-            <p className="text-gray-400 text-xs leading-relaxed max-w-sm">
+            <p className="text-gray-500 text-xs leading-relaxed max-w-sm">
               "Certified contractor providing safety-focused home appliance repairs and electrical visits with 100% genuine spare parts."
             </p>
 
@@ -87,7 +87,7 @@ export const Footer: React.FC<FooterProps> = ({ businessConfig }) => {
                   target="_blank" 
                   rel="noopener noreferrer"
                   title="Learn more about KS Electrical and AC Services"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-500 hover:text-white transition-colors"
                 >
                   About us
                 </a>
@@ -98,7 +98,7 @@ export const Footer: React.FC<FooterProps> = ({ businessConfig }) => {
                   target="_blank" 
                   rel="noopener noreferrer"
                   title="Read terms and conditions"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-500 hover:text-white transition-colors"
                 >
                   Terms & conditions
                 </a>
@@ -109,7 +109,7 @@ export const Footer: React.FC<FooterProps> = ({ businessConfig }) => {
                   target="_blank" 
                   rel="noopener noreferrer"
                   title="Read privacy policy"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-500 hover:text-white transition-colors"
                 >
                   Privacy policy
                 </a>
@@ -120,7 +120,7 @@ export const Footer: React.FC<FooterProps> = ({ businessConfig }) => {
                   target="_blank" 
                   rel="noopener noreferrer"
                   title="Read anti-discrimination policy"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-500 hover:text-white transition-colors"
                 >
                   Anti-discrimination policy
                 </a>
@@ -131,7 +131,7 @@ export const Footer: React.FC<FooterProps> = ({ businessConfig }) => {
                   target="_blank" 
                   rel="noopener noreferrer"
                   title="Join the KS Electrical team"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-500 hover:text-white transition-colors"
                 >
                   Careers
                 </a>
@@ -151,7 +151,7 @@ export const Footer: React.FC<FooterProps> = ({ businessConfig }) => {
                   target="_blank" 
                   rel="noopener noreferrer"
                   title="Read 1000+ verified customer reviews and ratings"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-500 hover:text-white transition-colors"
                 >
                   1000+ Customer reviews
                 </a>
@@ -162,7 +162,7 @@ export const Footer: React.FC<FooterProps> = ({ businessConfig }) => {
                   target="_blank" 
                   rel="noopener noreferrer"
                   title="Browse services categories near you"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-500 hover:text-white transition-colors"
                 >
                   Categories near you
                 </a>
@@ -173,7 +173,7 @@ export const Footer: React.FC<FooterProps> = ({ businessConfig }) => {
                   target="_blank" 
                   rel="noopener noreferrer"
                   title="Contact our customer care"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-500 hover:text-white transition-colors"
                 >
                   Contact us
                 </a>
@@ -195,11 +195,11 @@ export const Footer: React.FC<FooterProps> = ({ businessConfig }) => {
             <div className="pt-2 border-t border-gray-800/60 space-y-2">
               <h5 className="text-[10px] text-gray-500 font-extrabold uppercase tracking-wider">Support Hotline</h5>
               <div className="flex flex-col space-y-1 text-xs">
-                <a href={`tel:${businessConfig.contacts[0]}`} className="text-gray-400 hover:text-white transition-colors flex items-center">
+                <a href={`tel:${businessConfig.contacts[0]}`} className="text-gray-500 hover:text-white transition-colors flex items-center">
                   <Phone size={10} className="text-brand-blue mr-1.5 shrink-0" />
                   <span>+91 {businessConfig.contacts[0]}</span>
                 </a>
-                <a href={`mailto:${businessConfig.email}`} className="text-gray-400 hover:text-white transition-colors flex items-center text-left">
+                <a href={`mailto:${businessConfig.email}`} className="text-gray-500 hover:text-white transition-colors flex items-center text-left">
                   <Mail size={10} className="text-brand-blue mr-1.5 shrink-0" />
                   <span className="truncate">{businessConfig.email}</span>
                 </a>
@@ -219,7 +219,7 @@ export const Footer: React.FC<FooterProps> = ({ businessConfig }) => {
                   target="_blank" 
                   rel="noopener noreferrer"
                   title="Register as an electrical professional partner"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-500 hover:text-white transition-colors"
                 >
                   Register as a professional
                 </a>
@@ -228,7 +228,7 @@ export const Footer: React.FC<FooterProps> = ({ businessConfig }) => {
 
             <div className="pt-4 border-t border-gray-800/60 space-y-2.5">
               <h5 className="text-[10px] text-gray-500 font-extrabold uppercase tracking-wider">Service Coverage</h5>
-              <div className="flex flex-col space-y-1.5 text-[11px] text-gray-400 font-medium leading-tight">
+              <div className="flex flex-col space-y-1.5 text-[11px] text-gray-500 font-medium leading-tight">
                 <span className="flex items-start">
                   <MapPin size={11} className="text-brand-blue mt-0.5 mr-1.5 shrink-0" />
                   <span>Gaur City 1 & 2</span>

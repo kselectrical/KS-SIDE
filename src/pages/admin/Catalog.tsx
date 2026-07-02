@@ -132,7 +132,7 @@ export const Catalog: React.FC<CatalogProps> = ({ services, onUpdateServices }) 
             <button 
               type="button" 
               onClick={cancelForm}
-              className="text-xs text-gray-400 hover:text-gray-600 font-bold hover:underline cursor-pointer"
+              className="text-xs text-gray-500 hover:text-gray-600 font-bold hover:underline cursor-pointer"
             >
               Cancel
             </button>
@@ -141,7 +141,7 @@ export const Catalog: React.FC<CatalogProps> = ({ services, onUpdateServices }) 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Name */}
             <div className="space-y-1.5">
-              <label className="text-[10px] font-black text-gray-400 uppercase tracking-wider block">Service Title</label>
+              <label className="text-[10px] font-black text-gray-500 uppercase tracking-wider block">Service Title</label>
               <input
                 type="text"
                 required
@@ -154,7 +154,7 @@ export const Catalog: React.FC<CatalogProps> = ({ services, onUpdateServices }) 
 
             {/* Pricing Tag */}
             <div className="space-y-1.5">
-              <label className="text-[10px] font-black text-gray-400 uppercase tracking-wider block">Billing Rate (₹ Price)</label>
+              <label className="text-[10px] font-black text-gray-500 uppercase tracking-wider block">Billing Rate (₹ Price)</label>
               <input
                 type="number"
                 required
@@ -167,7 +167,7 @@ export const Catalog: React.FC<CatalogProps> = ({ services, onUpdateServices }) 
 
             {/* Category Selection */}
             <div className="space-y-1.5">
-              <label className="text-[10px] font-black text-gray-400 uppercase tracking-wider block">Major Category</label>
+              <label className="text-[10px] font-black text-gray-500 uppercase tracking-wider block">Major Category</label>
               <select
                 value={formCategory}
                 onChange={(e) => setFormCategory(e.target.value)}
@@ -182,7 +182,7 @@ export const Catalog: React.FC<CatalogProps> = ({ services, onUpdateServices }) 
 
             {/* Sub-Category Title */}
             <div className="space-y-1.5">
-              <label className="text-[10px] font-black text-gray-400 uppercase tracking-wider block">Subcategory Label</label>
+              <label className="text-[10px] font-black text-gray-500 uppercase tracking-wider block">Subcategory Label</label>
               <input
                 type="text"
                 required
@@ -195,7 +195,7 @@ export const Catalog: React.FC<CatalogProps> = ({ services, onUpdateServices }) 
 
             {/* Description */}
             <div className="space-y-1.5 md:col-span-2">
-              <label className="text-[10px] font-black text-gray-400 uppercase tracking-wider block">Service Description Summary</label>
+              <label className="text-[10px] font-black text-gray-500 uppercase tracking-wider block">Service Description Summary</label>
               <textarea
                 required
                 rows={2}
@@ -208,8 +208,8 @@ export const Catalog: React.FC<CatalogProps> = ({ services, onUpdateServices }) 
 
             {/* Service Photo Asset Choice */}
             <div className="space-y-2 md:col-span-2">
-              <label className="text-[10px] font-black text-gray-400 uppercase tracking-wider block flex items-center space-x-1">
-                <Image size={11} className="text-gray-400" />
+              <label className="text-[10px] font-black text-gray-500 uppercase tracking-wider block flex items-center space-x-1">
+                <Image size={11} className="text-gray-500" />
                 <span>Select Photo File Asset</span>
               </label>
               
@@ -250,7 +250,7 @@ export const Catalog: React.FC<CatalogProps> = ({ services, onUpdateServices }) 
 
             {/* Warranty tag */}
             <div className="space-y-1.5 md:col-span-2">
-              <label className="text-[10px] font-black text-gray-400 uppercase tracking-wider block">Warranty Period Statement</label>
+              <label className="text-[10px] font-black text-gray-500 uppercase tracking-wider block">Warranty Period Statement</label>
               <input
                 type="text"
                 required
@@ -302,7 +302,7 @@ export const Catalog: React.FC<CatalogProps> = ({ services, onUpdateServices }) 
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="bg-gray-50 border-b border-gray-200 text-[10px] font-black text-gray-400 uppercase tracking-wider select-none">
+              <tr className="bg-gray-50 border-b border-gray-200 text-[10px] font-black text-gray-500 uppercase tracking-wider select-none">
                 <th className="px-5 py-3.5">Image & Name</th>
                 <th className="px-5 py-3.5">Category</th>
                 <th className="px-5 py-3.5 text-right">Price</th>
@@ -326,7 +326,7 @@ export const Catalog: React.FC<CatalogProps> = ({ services, onUpdateServices }) 
                   </td>
                   <td className="px-5 py-3.5 min-w-[150px]">
                     <span className="text-gray-800 font-bold block">{srv.category}</span>
-                    <span className="text-[10px] text-gray-450 font-semibold block mt-0.5">{srv.subcategory}</span>
+                    <span className="text-[10px] text-gray-500 font-semibold block mt-0.5">{srv.subcategory}</span>
                   </td>
                   <td className="px-5 py-3.5 text-right font-black text-gray-950 text-sm min-w-[100px] select-none">
                     ₹{srv.price}

@@ -70,7 +70,7 @@ export const Categories: React.FC<CategoriesProps> = ({ services, onUpdateServic
       {/* Add Category Form */}
       <form onSubmit={handleAddCategory} className="bg-white border border-gray-250 rounded-xl p-4 shadow-sm flex items-end space-x-4 select-none">
         <div className="flex-1 space-y-1.5">
-          <label className="text-[10px] font-black text-gray-400 uppercase tracking-wider block">Add New Category Name</label>
+          <label className="text-[10px] font-black text-gray-500 uppercase tracking-wider block">Add New Category Name</label>
           <input
             type="text"
             required
@@ -94,7 +94,7 @@ export const Categories: React.FC<CategoriesProps> = ({ services, onUpdateServic
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="bg-gray-50 border-b border-gray-200 text-[10px] font-black text-gray-400 uppercase tracking-wider select-none">
+              <tr className="bg-gray-50 border-b border-gray-200 text-[10px] font-black text-gray-500 uppercase tracking-wider select-none">
                 <th className="px-5 py-3.5">Category Name</th>
                 <th className="px-5 py-3.5">Associated Services</th>
                 <th className="px-5 py-3.5 text-center">Actions</th>

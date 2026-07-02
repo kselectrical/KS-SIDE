@@ -20,7 +20,7 @@ const BRANDS = [
   { name: 'SAMSUNG', color: 'text-blue-800 font-extrabold font-sans tracking-wide' },
   { name: 'Godrej', color: 'text-emerald-600 font-bold font-serif italic' },
   { name: 'TOSHIBA', color: 'text-red-700 font-black' },
-  { name: '& more', color: 'text-gray-400 font-bold' }
+  { name: '& more', color: 'text-gray-500 font-bold' }
 ];
 
 export const BrandModal: React.FC<BrandModalProps> = ({
@@ -42,8 +42,9 @@ export const BrandModal: React.FC<BrandModalProps> = ({
             Select Brand for {serviceName}
           </h3>
           <button 
+            aria-label="Close Modal"
             onClick={onClose}
-            className="text-gray-400 hover:text-gray-700 p-1.5 hover:bg-gray-100 rounded-full transition-all cursor-pointer"
+            className="text-gray-500 hover:text-gray-700 p-2 min-w-[44px] min-h-[44px] flex items-center justify-center hover:bg-gray-100 rounded-full transition-all cursor-pointer"
           >
             <X size={18} />
           </button>
@@ -65,7 +66,7 @@ export const BrandModal: React.FC<BrandModalProps> = ({
           </div>
 
           {/* Trademark Disclaimer note */}
-          <p className="text-[10px] text-gray-400 leading-relaxed mt-4 text-center font-medium">
+          <p className="text-[10px] text-gray-500 leading-relaxed mt-4 text-center font-medium">
             These trademarks and/or logos are used for illustration purposes only. KS Electrical and AC Services is an independent contractor servicing all leading appliance brands.
           </p>
         </div>

@@ -102,12 +102,13 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* Location Selector Dropdown */}
             <div className="relative shrink-0">
               <button
+                aria-label="Toggle Location Dropdown"
                 onClick={() => setShowLocationDropdown(!showLocationDropdown)}
                 className="flex items-center space-x-1.5 px-3 py-2.5 bg-gray-50 hover:bg-gray-100 border border-gray-250 border-r-0 rounded-l-lg text-xs font-semibold text-gray-700 select-none cursor-pointer transition-colors max-w-[200px] truncate"
               >
-                <MapPin size={14} className="text-gray-400 shrink-0" />
+                <MapPin size={14} className="text-gray-500 shrink-0" />
                 <span className="truncate">{selectedLocation}</span>
-                <ChevronDown size={12} className="text-gray-400 shrink-0" />
+                <ChevronDown size={12} className="text-gray-500 shrink-0" />
               </button>
 
               {showLocationDropdown && (
@@ -117,7 +118,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                     onClick={() => setShowLocationDropdown(false)}
                   />
                   <div className="absolute left-0 mt-1.5 w-64 bg-white border border-gray-200 rounded-lg shadow-dropdown z-50 py-1 font-sans text-xs">
-                    <div className="px-3 py-2 text-gray-400 font-bold uppercase tracking-wider border-b border-gray-100">
+                    <div className="px-3 py-2 text-gray-500 font-bold uppercase tracking-wider border-b border-gray-100">
                       Select Service Location
                     </div>
                     {LOCATIONS.map((loc) => (
@@ -141,7 +142,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             {/* Search Input with Auto-Suggestions */}
             <div className="relative flex-1">
-              <Search className="absolute left-3 top-3.5 text-gray-400" size={15} />
+              <Search className="absolute left-3 top-3.5 text-gray-500" size={15} />
               <input
                 type="text"
                 value={searchQuery}
@@ -153,7 +154,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery('')}
-                  className="absolute right-3 top-3 text-[10px] font-bold text-gray-400 hover:text-gray-600 uppercase cursor-pointer"
+                  className="absolute right-3 top-3 text-[10px] font-bold text-gray-500 hover:text-gray-600 uppercase cursor-pointer"
                 >
                   Clear
                 </button>
@@ -167,7 +168,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                     onClick={() => setShowSuggestions(false)}
                   />
                   <div className="absolute top-full left-0 right-0 mt-1.5 bg-white border border-gray-200 rounded-lg shadow-dropdown z-50 py-1 font-sans text-xs animate-in fade-in slide-in-from-top-1 duration-150">
-                    <div className="px-3 py-2 text-gray-400 font-bold uppercase tracking-wider border-b border-gray-100">
+                    <div className="px-3 py-2 text-gray-500 font-bold uppercase tracking-wider border-b border-gray-100">
                       Popular Searches
                     </div>
                     {SUGGESTIONS.map((item) => (
@@ -212,7 +213,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               className="hidden lg:flex items-center space-x-1.5 px-3 py-1.5 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-lg text-xs font-bold text-slate-800 transition-colors select-none"
               title="View 1000+ Verified Customer Reviews"
             >
-              <Star size={12} fill="#F97316" className="text-brand-orange shrink-0" />
+              <Star size={12} fill="#F97316" className="text-orange-600 shrink-0" />
               <span className="font-extrabold text-slate-900">4.9</span>
               <span className="text-slate-300">|</span>
               <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">1000+ Reviews</span>
@@ -233,7 +234,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               href="https://ksbilling.lovestoblog.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:flex items-center space-x-1.5 px-3.5 py-2.5 bg-slate-900 hover:bg-brand-blue-dark text-white hover:text-brand-orange rounded-lg text-xs font-bold transition-all shadow-sm active:scale-95 hover:scale-102 select-none border border-slate-800"
+              className="hidden md:flex items-center space-x-1.5 px-3.5 py-2.5 bg-slate-900 hover:bg-brand-blue-dark text-white hover:text-orange-600 rounded-lg text-xs font-bold transition-all shadow-sm active:scale-95 hover:scale-102 select-none border border-slate-800"
             >
               <span className="w-1.5 h-1.5 bg-brand-orange rounded-full animate-ping shrink-0" />
               <span>Staff Portal</span>

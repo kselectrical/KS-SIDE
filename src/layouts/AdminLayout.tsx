@@ -73,7 +73,7 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({
                 }`}
               >
                 <div className="flex items-center space-x-2.5">
-                  <Icon size={15} className={isActive ? item.isNew ? 'text-emerald-600' : 'text-brand-blue' : 'text-gray-400'} />
+                  <Icon size={15} className={isActive ? item.isNew ? 'text-emerald-600' : 'text-brand-blue' : 'text-gray-500'} />
                   <span>{item.label}</span>
                 </div>
                 {item.isNew && (
@@ -112,17 +112,17 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({
         {/* Admin Top Header */}
         <header className="bg-white border-b border-gray-200 h-16 px-8 flex items-center justify-between shrink-0 select-none">
           <div className="text-left">
-            <h2 className="text-gray-900 font-black text-sm uppercase tracking-wide">
+            <h1 className="text-gray-900 font-black text-sm uppercase tracking-wide">
               {navItems.find(item => location.pathname.startsWith(item.path))?.label || 'Administration Control'}
-            </h2>
-            <p className="text-[9px] text-gray-400 font-bold uppercase tracking-wider mt-0.5">
+            </h1>
+            <p className="text-[9px] text-gray-500 font-bold uppercase tracking-wider mt-0.5">
               Live pricing updates and database records synchronization
             </p>
           </div>
           <div className="flex items-center space-x-4">
             <div className="text-right">
               <span className="text-gray-800 font-extrabold text-xs block">{businessConfig.owner}</span>
-              <span className="text-[9px] text-gray-450 font-bold block">{businessConfig.email}</span>
+              <span className="text-[9px] text-gray-500 font-bold block">{businessConfig.email}</span>
             </div>
             <div className="w-9 h-9 rounded-full bg-blue-50 border border-blue-100 flex items-center justify-center text-brand-blue font-black shadow-inner">
               A

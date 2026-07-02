@@ -87,7 +87,7 @@ export const Requests: React.FC<RequestsProps> = ({
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="bg-gray-50 border-b border-gray-200 text-[10px] font-black text-gray-400 uppercase tracking-wider select-none">
+                <tr className="bg-gray-50 border-b border-gray-200 text-[10px] font-black text-gray-500 uppercase tracking-wider select-none">
                   <th className="px-5 py-3.5">Booking / Date</th>
                   <th className="px-5 py-3.5">Customer details</th>
                   <th className="px-5 py-3.5">Services ordered</th>
@@ -112,7 +112,7 @@ export const Requests: React.FC<RequestsProps> = ({
                     <td className="px-5 py-3.5 text-left min-w-[200px]">
                       <span className="text-gray-900 font-extrabold block text-sm">{booking.customerName}</span>
                       <span className="text-gray-655 font-bold block mt-0.5">📞 +91 {booking.phone}</span>
-                      <p className="text-[10px] text-gray-400 font-medium leading-normal mt-1 max-w-[180px]">
+                      <p className="text-[10px] text-gray-500 font-medium leading-normal mt-1 max-w-[180px]">
                         📍 {booking.address}
                       </p>
                     </td>
@@ -128,7 +128,7 @@ export const Requests: React.FC<RequestsProps> = ({
                           </div>
                         ))}
                       </div>
-                      <div className="text-[9px] text-gray-400 font-bold mt-1.5 block leading-none">
+                      <div className="text-[9px] text-gray-500 font-bold mt-1.5 block leading-none">
                         Schedule: <span className="text-gray-700">{booking.dateTime}</span>
                       </div>
                     </td>
@@ -171,7 +171,7 @@ export const Requests: React.FC<RequestsProps> = ({
                           disabled={booking.status === 'Completed'}
                           className={`px-2 py-1 rounded text-[10px] font-extrabold uppercase transition-all cursor-pointer ${
                             booking.status === 'Completed'
-                              ? 'bg-gray-100 text-gray-400 border border-gray-200 cursor-not-allowed'
+                              ? 'bg-gray-100 text-gray-500 border border-gray-200 cursor-not-allowed'
                               : 'bg-green-650 hover:bg-green-700 text-white shadow-sm'
                           }`}
                         >
@@ -183,7 +183,7 @@ export const Requests: React.FC<RequestsProps> = ({
                           disabled={booking.status === 'Cancelled'}
                           className={`px-2 py-1 rounded text-[10px] font-extrabold uppercase transition-all cursor-pointer ${
                             booking.status === 'Cancelled'
-                              ? 'bg-gray-100 text-gray-400 border border-gray-200 cursor-not-allowed'
+                              ? 'bg-gray-100 text-gray-500 border border-gray-200 cursor-not-allowed'
                               : 'bg-red-50 hover:bg-red-100 text-red-650 border border-red-200 shadow-sm'
                           }`}
                         >

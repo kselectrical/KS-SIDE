@@ -38,7 +38,7 @@ export const Login: React.FC<LoginProps> = () => {
           All login page inputs, database credentials, and authentication logic have been removed from this page as requested.
         </p>
 
-        <p className="text-[10px] text-gray-450 font-bold mt-4">
+        <p className="text-[10px] text-gray-500 font-bold mt-4">
           Waiting for your prompt to replace the Login Icon.
         </p>
 

@@ -60,8 +60,9 @@ export const ServiceDetailsModal: React.FC<ServiceDetailsModalProps> = ({
             Service Details
           </h3>
           <button 
+            aria-label="Close Modal"
             onClick={onClose}
-            className="text-gray-400 hover:text-gray-700 p-1 rounded-full hover:bg-gray-100 transition-all cursor-pointer"
+            className="text-gray-500 hover:text-gray-700 p-2 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full hover:bg-gray-100 transition-all cursor-pointer"
           >
             <X size={20} />
           </button>
@@ -205,7 +206,7 @@ export const ServiceDetailsModal: React.FC<ServiceDetailsModalProps> = ({
             <div className="flex items-center space-x-6 select-none bg-gray-50 p-4 rounded-xl border border-gray-150">
               <div className="text-center">
                 <span className="text-3xl sm:text-4xl font-black text-gray-900 leading-none">4.8</span>
-                <span className="text-xs text-gray-450 block font-bold mt-1">out of 5</span>
+                <span className="text-xs text-gray-500 block font-bold mt-1">out of 5</span>
               </div>
               <div className="flex-1 space-y-1">
                 {[
@@ -221,7 +222,7 @@ export const ServiceDetailsModal: React.FC<ServiceDetailsModalProps> = ({
                     <div className="flex-1 h-1.5 bg-gray-200 rounded-full overflow-hidden">
                       <div className="h-full bg-gray-800 rounded-full" style={{ width: row.pct }} />
                     </div>
-                    <span className="w-8 text-right ml-2 text-gray-400">{row.pct}</span>
+                    <span className="w-8 text-right ml-2 text-gray-500">{row.pct}</span>
                   </div>
                 ))}
               </div>
@@ -233,7 +234,7 @@ export const ServiceDetailsModal: React.FC<ServiceDetailsModalProps> = ({
                 <div key={index} className="space-y-2 border-b border-gray-100 last:border-0 pb-4 last:pb-0">
                   <div className="flex justify-between items-center text-xs">
                     <span className="font-bold text-gray-900">{rev.name}</span>
-                    <span className="text-gray-400 font-medium">{rev.date}</span>
+                    <span className="text-gray-500 font-medium">{rev.date}</span>
                   </div>
                   <div className="flex items-center space-x-1.5">
                     <div className="flex text-yellow-500">
@@ -241,7 +242,7 @@ export const ServiceDetailsModal: React.FC<ServiceDetailsModalProps> = ({
                         <Star key={i} size={10} fill="currentColor" />
                       ))}
                     </div>
-                    <span className="text-[10px] text-gray-400 font-semibold">{rev.service}</span>
+                    <span className="text-[10px] text-gray-500 font-semibold">{rev.service}</span>
                   </div>
                   <p className="text-xs text-gray-650 leading-relaxed font-medium">
                     "{rev.text}"

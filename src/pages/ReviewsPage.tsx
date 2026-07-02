@@ -204,7 +204,7 @@ export const ReviewsPage: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-2">
         <Link 
           to="/"
-          className="inline-flex items-center space-x-1.5 text-xs font-bold text-gray-500 hover:text-brand-orange uppercase tracking-wider transition-colors cursor-pointer select-none"
+          className="inline-flex items-center space-x-1.5 text-xs font-bold text-gray-500 hover:text-orange-600 uppercase tracking-wider transition-colors cursor-pointer select-none"
           title="Go back to Home Page"
         >
           <ArrowLeft size={13} />
@@ -216,7 +216,7 @@ export const ReviewsPage: React.FC = () => {
       <section className="bg-gradient-to-br from-brand-blue to-brand-blue-dark text-white py-16 px-4 relative overflow-hidden select-none">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(249,115,22,0.08),transparent)] pointer-events-none" />
         <div className="max-w-7xl mx-auto text-center relative z-10 space-y-4">
-          <div className="inline-flex items-center space-x-2 bg-brand-orange/10 border border-brand-orange/20 px-3.5 py-1.5 rounded-full text-brand-orange text-xs font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center space-x-2 bg-brand-orange/10 border border-brand-orange/20 px-3.5 py-1.5 rounded-full text-orange-600 text-xs font-bold uppercase tracking-wider">
             <Sparkles size={13} className="animate-pulse" />
             <span>100% Verified Customer Feedback</span>
           </div>
@@ -242,15 +242,15 @@ export const ReviewsPage: React.FC = () => {
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs font-bold text-gray-700">
               <span className="flex items-center space-x-1">
-                <MapPin size={12} className="text-brand-orange shrink-0" />
+                <MapPin size={12} className="text-orange-600 shrink-0" />
                 <span>Gaur City 1 & 2</span>
               </span>
               <span className="flex items-center space-x-1">
-                <MapPin size={12} className="text-brand-orange shrink-0" />
+                <MapPin size={12} className="text-orange-600 shrink-0" />
                 <span>Noida Extension</span>
               </span>
               <span className="flex items-center space-x-1">
-                <MapPin size={12} className="text-brand-orange shrink-0" />
+                <MapPin size={12} className="text-orange-600 shrink-0" />
                 <span>Ghaziabad Crossing</span>
               </span>
             </div>
@@ -262,7 +262,7 @@ export const ReviewsPage: React.FC = () => {
             
             <div className="flex space-x-0.5 my-2">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} size={18} fill="#F97316" className="text-brand-orange" />
+                <Star key={i} size={18} fill="#F97316" className="text-orange-600" />
               ))}
             </div>
             
@@ -288,7 +288,7 @@ export const ReviewsPage: React.FC = () => {
             </div>
 
             <div className="mt-4 pt-3.5 border-t border-slate-200 w-full flex items-center justify-center space-x-1.5 text-xs font-black text-brand-blue uppercase select-none">
-              <ShieldCheck size={14} className="text-brand-orange" />
+              <ShieldCheck size={14} className="text-orange-600" />
               <span>100% Verified Reviews</span>
             </div>
           </div>
@@ -303,7 +303,7 @@ export const ReviewsPage: React.FC = () => {
           
           {/* Search Input */}
           <div className="relative flex-1 max-w-md">
-            <Search className="absolute left-3 top-3 text-gray-400" size={15} />
+            <Search className="absolute left-3 top-3 text-gray-500" size={15} />
             <input
               type="text"
               value={searchTerm}
@@ -318,7 +318,7 @@ export const ReviewsPage: React.FC = () => {
 
           {/* Rating Filters */}
           <div className="flex items-center space-x-2 shrink-0">
-            <span className="text-[10px] font-black text-gray-400 uppercase tracking-wider block">Rating:</span>
+            <span className="text-[10px] font-black text-gray-500 uppercase tracking-wider block">Rating:</span>
             <div className="flex bg-gray-50 p-1 rounded-lg border border-gray-200">
               <button
                 type="button"
@@ -362,12 +362,12 @@ export const ReviewsPage: React.FC = () => {
 
         {/* Reviews Grid List */}
         {filteredReviews.length === 0 ? (
-          <div className="bg-white border border-gray-200 rounded-2xl p-12 text-center text-gray-400 flex flex-col justify-center items-center">
+          <div className="bg-white border border-gray-200 rounded-2xl p-12 text-center text-gray-500 flex flex-col justify-center items-center">
             <AlertCircle size={36} className="text-gray-300 mb-2" />
             <p className="text-sm font-bold">No reviews found matching your search term.</p>
             <button
               onClick={() => { setSearchTerm(''); setRatingFilter('all'); }}
-              className="mt-4 text-xs font-extrabold text-brand-orange uppercase hover:underline cursor-pointer"
+              className="mt-4 text-xs font-extrabold text-orange-600 uppercase hover:underline cursor-pointer"
             >
               Reset Filters
             </button>
@@ -389,12 +389,12 @@ export const ReviewsPage: React.FC = () => {
                       <div className="flex items-center space-x-1.5">
                         <span className="text-xs sm:text-sm font-black text-gray-900 leading-tight">{review.name}</span>
                         <div className="flex items-center space-x-0.5 bg-blue-50/50 border border-blue-100 rounded px-1.5 py-0.5 text-[8px] font-black text-brand-blue uppercase">
-                          <ShieldCheck size={9} className="text-brand-orange mr-0.5 shrink-0" />
+                          <ShieldCheck size={9} className="text-orange-600 mr-0.5 shrink-0" />
                           <span>Verified</span>
                         </div>
                       </div>
                       <span className="text-[10px] text-gray-500 font-semibold flex items-center mt-0.5">
-                        <MapPin size={10} className="text-gray-400 mr-1 shrink-0" />
+                        <MapPin size={10} className="text-gray-500 mr-1 shrink-0" />
                         {review.location}
                       </span>
                     </div>
@@ -404,11 +404,11 @@ export const ReviewsPage: React.FC = () => {
                   <div className="flex items-center space-x-2 sm:text-right shrink-0">
                     <div className="flex space-x-0.5">
                       {[...Array(review.rating)].map((_, i) => (
-                        <Star key={i} size={13} fill="#F97316" className="text-brand-orange" />
+                        <Star key={i} size={13} fill="#F97316" className="text-orange-600" />
                       ))}
                     </div>
                     <span className="text-gray-300 text-[10px]">|</span>
-                    <span className="text-[10px] text-gray-400 font-bold">{review.date}</span>
+                    <span className="text-[10px] text-gray-500 font-bold">{review.date}</span>
                   </div>
                 </div>
 
@@ -428,7 +428,7 @@ export const ReviewsPage: React.FC = () => {
             <div className="flex items-center justify-between border-t border-gray-200 pt-6 px-2 select-none">
               
               {/* Info text */}
-              <div className="text-[10px] sm:text-xs text-gray-400 font-bold uppercase tracking-wider">
+              <div className="text-[10px] sm:text-xs text-gray-500 font-bold uppercase tracking-wider">
                 Showing {Math.min(filteredReviews.length, (currentPage - 1) * itemsPerPage + 1)} - {Math.min(filteredReviews.length, currentPage * itemsPerPage)} of {filteredReviews.length} Reviews
               </div>
 

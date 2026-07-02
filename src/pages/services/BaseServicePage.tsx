@@ -472,7 +472,7 @@ export const BaseServicePage: React.FC<BaseServicePageProps> = ({
                       <HelpCircle size={16} className="text-brand-blue shrink-0" />
                       <span>{faq.q}</span>
                     </div>
-                    {isOpen ? <ChevronUp size={16} className="text-gray-400 shrink-0" /> : <ChevronDown size={16} className="text-gray-400 shrink-0" />}
+                    {isOpen ? <ChevronUp size={16} className="text-gray-500 shrink-0" /> : <ChevronDown size={16} className="text-gray-500 shrink-0" />}
                   </button>
                   {isOpen && (
                     <div className="px-5 pb-5 pt-1 text-gray-600 text-xs sm:text-sm leading-relaxed border-t border-gray-100 bg-gray-50/20 text-left animate-in fade-in slide-in-from-top-1 duration-150">

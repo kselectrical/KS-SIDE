@@ -186,17 +186,17 @@ export const CreateManualInvoice: React.FC<CreateManualInvoiceProps> = ({
           <ArrowLeft size={16} />
         </button>
         <div>
-          <h3 className="font-extrabold text-gray-900 text-sm">Create Manual Client Invoice</h3>
+          <h1 className="font-extrabold text-gray-900 text-sm">Create Manual Client Invoice</h1>
           <p className="text-[10px] text-gray-500 font-semibold mt-0.5">Generate tax invoice ledger records manually for walk-in or offline bookings.</p>
         </div>
       </div>
 
       <form onSubmit={handleSubmit} className="bg-white border border-gray-200 rounded-2xl p-6 space-y-6 shadow-sm">
         <div className="border-b border-gray-100 pb-3 flex justify-between items-center">
-          <h4 className="font-extrabold text-gray-900 text-xs uppercase tracking-wider flex items-center space-x-1.5">
+          <h2 className="font-extrabold text-gray-900 text-xs uppercase tracking-wider flex items-center space-x-1.5">
             <FileText size={14} className="text-emerald-600" />
             <span>Invoice Information</span>
-          </h4>
+          </h2>
           <span className="text-[9px] font-black tracking-wider uppercase text-emerald-650 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-100 select-none">
             Tax Invoice Mode
           </span>
@@ -205,7 +205,7 @@ export const CreateManualInvoice: React.FC<CreateManualInvoiceProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {/* Customer Name */}
           <div className="space-y-1.5">
-            <label className="text-[10px] font-black text-gray-400 uppercase tracking-wider block">Customer Name *</label>
+            <label className="text-[10px] font-black text-gray-500 uppercase tracking-wider block">Customer Name *</label>
             <input
               type="text"
               required
@@ -218,7 +218,7 @@ export const CreateManualInvoice: React.FC<CreateManualInvoiceProps> = ({
 
           {/* Phone */}
           <div className="space-y-1.5">
-            <label className="text-[10px] font-black text-gray-400 uppercase tracking-wider block">Phone Number (+91) *</label>
+            <label className="text-[10px] font-black text-gray-500 uppercase tracking-wider block">Phone Number (+91) *</label>
             <input
               type="text"
               required
@@ -231,7 +231,7 @@ export const CreateManualInvoice: React.FC<CreateManualInvoiceProps> = ({
 
           {/* Coverage Zone / Location */}
           <div className="space-y-1.5">
-            <label className="text-[10px] font-black text-gray-400 uppercase tracking-wider block">Coverage Zone *</label>
+            <label className="text-[10px] font-black text-gray-500 uppercase tracking-wider block">Coverage Zone *</label>
             <select
               value={manualLocation}
               onChange={(e) => setManualLocation(e.target.value)}
@@ -245,7 +245,7 @@ export const CreateManualInvoice: React.FC<CreateManualInvoiceProps> = ({
 
           {/* Address */}
           <div className="space-y-1.5 md:col-span-2">
-            <label className="text-[10px] font-black text-gray-400 uppercase tracking-wider block">Customer Service Address *</label>
+            <label className="text-[10px] font-black text-gray-500 uppercase tracking-wider block">Customer Service Address *</label>
             <textarea
               required
               rows={2}
@@ -258,7 +258,7 @@ export const CreateManualInvoice: React.FC<CreateManualInvoiceProps> = ({
 
           {/* Slot Time */}
           <div className="space-y-1.5">
-            <label className="text-[10px] font-black text-gray-400 uppercase tracking-wider block">Schedule Slot / Date-Time</label>
+            <label className="text-[10px] font-black text-gray-500 uppercase tracking-wider block">Schedule Slot / Date-Time</label>
             <input
               type="text"
               value={manualDateTime}
@@ -271,12 +271,12 @@ export const CreateManualInvoice: React.FC<CreateManualInvoiceProps> = ({
 
         {/* LINE ITEMS BUILDER */}
         <div className="border border-gray-200 rounded-xl p-4 bg-gray-50/50 space-y-4">
-          <h4 className="text-xs font-black text-gray-800 uppercase tracking-wider border-b border-gray-200 pb-1.5 select-none">Add Line Items & Charges</h4>
+          <h2 className="text-xs font-black text-gray-800 uppercase tracking-wider border-b border-gray-200 pb-1.5 select-none">Add Line Items & Charges</h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 divide-y lg:divide-y-0 lg:divide-x divide-gray-200">
             {/* Catalog Services selection */}
             <div className="space-y-3 pb-4 lg:pb-0">
-              <span className="text-[10px] font-black text-gray-450 uppercase tracking-wider block select-none">Option A: Select From Active Catalog Service</span>
+              <span className="text-[10px] font-black text-gray-500 uppercase tracking-wider block select-none">Option A: Select From Active Catalog Service</span>
               
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <div className="sm:col-span-2 space-y-1">
@@ -334,7 +334,7 @@ export const CreateManualInvoice: React.FC<CreateManualInvoiceProps> = ({
 
             {/* Custom Charges selection */}
             <div className="space-y-3 pt-4 lg:pt-0 lg:pl-6">
-              <span className="text-[10px] font-black text-gray-450 uppercase tracking-wider block select-none">Option B: Add Custom Charge / Extra Spare Parts</span>
+              <span className="text-[10px] font-black text-gray-500 uppercase tracking-wider block select-none">Option B: Add Custom Charge / Extra Spare Parts</span>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="space-y-1">
@@ -386,7 +386,7 @@ export const CreateManualInvoice: React.FC<CreateManualInvoiceProps> = ({
         <div className="border border-gray-250 rounded-xl overflow-hidden bg-white">
           <table className="w-full text-left border-collapse font-sans">
             <thead>
-              <tr className="bg-gray-50 border-b border-gray-200 text-[9px] font-black text-gray-400 uppercase tracking-wider select-none">
+              <tr className="bg-gray-50 border-b border-gray-200 text-[9px] font-black text-gray-500 uppercase tracking-wider select-none">
                 <th className="px-4 py-2.5">S.No</th>
                 <th className="px-4 py-2.5">Item / Service Details</th>
                 <th className="px-4 py-2.5 text-center">Qty</th>
@@ -398,14 +398,14 @@ export const CreateManualInvoice: React.FC<CreateManualInvoiceProps> = ({
             <tbody className="divide-y divide-gray-150 text-[11px] font-semibold text-gray-700">
               {manualItems.length === 0 ? (
                 <tr>
-                  <td colSpan={6} className="px-4 py-8 text-center text-gray-400 italic font-medium select-none">
+                  <td colSpan={6} className="px-4 py-8 text-center text-gray-500 italic font-medium select-none">
                     No services or items added to invoice yet. Add standard or custom items above.
                   </td>
                 </tr>
               ) : (
                 manualItems.map((item, idx) => (
                   <tr key={idx} className="hover:bg-gray-55 transition-colors">
-                    <td className="px-4 py-2.5 text-gray-450 font-bold select-none">{idx + 1}</td>
+                    <td className="px-4 py-2.5 text-gray-500 font-bold select-none">{idx + 1}</td>
                     <td className="px-4 py-2.5">
                       <span className="font-extrabold text-gray-900 block">{item.serviceName}</span>
                       {item.brand && (

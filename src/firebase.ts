@@ -492,18 +492,16 @@ export const saveBookingToCloud = async (booking: Omit<BookingData, 'id' | 'crea
             totalBookings: (existing.totalBookings || 0) + 1
           }, { merge: true });
         } else {
-          const newCustomer: Partial<CustomerUser> = {
+          const newCustomer: CustomerUser = {
             name: newBooking.customerName,
             phone: phoneKey,
+            email: activeEmail || undefined,
             address: newBooking.address,
             serviceHistory: newServiceItems,
             lastBookingDate: newBooking.createdAt,
             totalBookings: 1,
             joinedAt: new Date().toISOString()
           };
-          if (activeEmail) {
-            newCustomer.email = activeEmail;
-          }
           await setDoc(custRef, newCustomer);
         }
         console.log(`☁️ Customer directory record synced for phone: ${phoneKey}`);
@@ -750,9 +748,11 @@ export const saveCustomerToCloud = async (user: { name: string; email: string; p
       const totalBookings = existing.exists() ? (existing.data().totalBookings || 0) : 0;
       const lastBookingDate = existing.exists() ? (existing.data().lastBookingDate || joinedAt) : joinedAt;
 
-      const customer: Partial<CustomerUser> = {
+      const customer: CustomerUser = {
         name: user.name,
         phone: phoneKey,
+        email: user.email,
+        photoUrl: user.photoUrl,
         joinedAt,
         address,
         serviceHistory,
@@ -760,12 +760,9 @@ export const saveCustomerToCloud = async (user: { name: string; email: string; p
         lastBookingDate
       };
 
-      if (user.email) customer.email = user.email;
-      if (user.photoUrl) customer.photoUrl = user.photoUrl;
-
-      await setDoc(docRef, customer, { merge: true });
+      await setDoc(docRef, customer);
       console.log(`☁️ Customer ${phoneKey} synced in Firestore.`);
-      return customer as CustomerUser;
+      return customer;
     } catch (e) {
       console.error("Error saving customer to Firestore:", e);
     }

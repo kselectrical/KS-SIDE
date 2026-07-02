@@ -267,7 +267,7 @@ Please dispatch a technician. Thank you!`;
         
         {/* Step Indicator Header */}
         {step < 4 && (
-          <div className="flex items-center justify-between mb-8 border-b border-gray-100 pb-4 font-sans text-xs text-gray-400 font-bold select-none">
+          <div className="flex items-center justify-between mb-8 border-b border-gray-100 pb-4 font-sans text-xs text-gray-500 font-bold select-none">
             <div className="flex items-center space-x-2">
               <span className={`w-5 h-5 rounded-full flex items-center justify-center border text-[10px] ${
                 step >= 1 ? 'border-brand-blue text-brand-blue bg-blue-50/50' : 'border-gray-200'
@@ -312,7 +312,7 @@ Please dispatch a technician. Thank you!`;
 
                   {cartItems.length === 0 ? (
                     <div className="p-6 border border-dashed border-gray-200 rounded-lg text-center bg-gray-50/50">
-                      <p className="text-xs text-gray-400 font-bold">Your cart is empty.</p>
+                      <p className="text-xs text-gray-500 font-bold">Your cart is empty.</p>
                       <button
                         type="button"
                         onClick={() => {
@@ -407,7 +407,7 @@ Please dispatch a technician. Thank you!`;
                     onClick={handleNext}
                     className={`px-6 py-2.5 rounded-lg font-bold text-xs tracking-wider uppercase flex items-center space-x-1.5 transition-colors cursor-pointer ${
                       cartItems.length === 0 
-                        ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                        ? 'bg-gray-100 text-gray-500 cursor-not-allowed'
                         : 'bg-brand-blue hover:bg-brand-blue-dark text-white shadow-sm'
                     }`}
                   >
@@ -535,7 +535,7 @@ Please dispatch a technician. Thank you!`;
                       Your Full Name (Locked)
                     </label>
                     <div className="relative">
-                      <User className="absolute left-3 top-3 text-gray-400" size={14} />
+                      <User className="absolute left-3 top-3 text-gray-500" size={14} />
                       <input
                         type="text"
                         disabled
@@ -553,7 +553,7 @@ Please dispatch a technician. Thank you!`;
                       Mobile Number (Locked)
                     </label>
                     <div className="relative">
-                      <Phone className="absolute left-3 top-3 text-gray-400" size={14} />
+                      <Phone className="absolute left-3 top-3 text-gray-500" size={14} />
                       <input
                         type="tel"
                         disabled
@@ -571,7 +571,7 @@ Please dispatch a technician. Thank you!`;
                       Email Address (Optional)
                     </label>
                     <div className="relative">
-                      <Mail className="absolute left-3 top-3 text-gray-400" size={14} />
+                      <Mail className="absolute left-3 top-3 text-gray-500" size={14} />
                       <input
                         type="email"
                         placeholder="e.g. name@example.com (Optional)"
@@ -594,7 +594,7 @@ Please dispatch a technician. Thank you!`;
                       Service Region Scope
                     </label>
                     <div className="relative">
-                      <MapPin className="absolute left-3 top-3 text-gray-400" size={14} />
+                      <MapPin className="absolute left-3 top-3 text-gray-500" size={14} />
                       <input
                         type="text"
                         disabled
@@ -612,7 +612,7 @@ Please dispatch a technician. Thank you!`;
                     Full Home Address (Flat, Block, Gaur City Society...)
                   </label>
                   <div className="relative">
-                    <MapPin className="absolute left-3 top-3.5 text-gray-400" size={14} />
+                    <MapPin className="absolute left-3 top-3.5 text-gray-500" size={14} />
                     <textarea
                       rows={3}
                       placeholder="Enter flat number, block number, society name, and landmarks..."
@@ -671,7 +671,7 @@ Please dispatch a technician. Thank you!`;
                   <h3 className="text-lg font-black text-gray-900 tracking-tight leading-none uppercase">
                     Booking Request Sent
                   </h3>
-                  <p className="text-xs text-gray-400 font-bold">DISPATCH_ID: KS-DISP-{dispatchId || 54321}</p>
+                  <p className="text-xs text-gray-500 font-bold">DISPATCH_ID: KS-DISP-{dispatchId || 54321}</p>
                 </div>
 
                 {/* Receipt Card */}
@@ -704,7 +704,7 @@ Please dispatch a technician. Thank you!`;
                     <div className="text-brand-blue text-right font-black text-sm">₹{finalCalculatedPrice}</div>
                   </div>
 
-                  <div className="border-t border-gray-200 pt-3 text-[10px] text-gray-400 text-center leading-relaxed">
+                  <div className="border-t border-gray-200 pt-3 text-[10px] text-gray-500 text-center leading-relaxed">
                     Our lead contractor, **Kaushindra Singh**, will call you at **{formData.phone}** shortly to confirm the technician dispatch timings. For queries, contact us at **{businessConfig.contacts[0]}**.
                   </div>
                 </div>
