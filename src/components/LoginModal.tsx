@@ -92,9 +92,12 @@ export const LoginModal: React.FC<LoginModalProps> = ({
     setIsAdminLoading(true);
 
     try {
-      if (isFirebaseConfigured && auth) {
-        await signInWithEmailAndPassword(auth, adminUser.trim(), adminPass);
+      if (!isFirebaseConfigured || !auth) {
+        throw new Error("Authentication system is not configured. Please contact support.");
       }
+
+      await signInWithEmailAndPassword(auth, adminUser.trim(), adminPass);
+
       onLoginSuccess('admin');
       onClose();
       // Reset fields
