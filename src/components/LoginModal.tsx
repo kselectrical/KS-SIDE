@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { X, Lock, User, Sparkles, Loader } from 'lucide-react';
-import { adminCredentials } from '../data';
 import { auth, isFirebaseConfigured } from '../firebase';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 
@@ -25,6 +24,7 @@ export const LoginModal: React.FC<LoginModalProps> = ({
   // Admin State
   const [adminUser, setAdminUser] = useState('');
   const [adminPass, setAdminPass] = useState('');
+  const [isAdminLoading, setIsAdminLoading] = useState(false);
   const [error, setError] = useState('');
 
   if (!isOpen) return null;
@@ -86,20 +86,26 @@ export const LoginModal: React.FC<LoginModalProps> = ({
     }
   };
 
-  const handleAdminSubmit = (e: React.FormEvent) => {
+  const handleAdminSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (
-      adminUser.trim() === adminCredentials.username &&
-      adminPass === adminCredentials.password
-    ) {
-      setError('');
+    setError('');
+    setIsAdminLoading(true);
+
+    try {
+      if (isFirebaseConfigured && auth) {
+        await signInWithEmailAndPassword(auth, adminUser.trim(), adminPass);
+      }
       onLoginSuccess('admin');
       onClose();
       // Reset fields
       setAdminUser('');
       setAdminPass('');
-    } else {
-      setError('Invalid admin username or password.');
+    } catch (err) {
+      const authError = err as { message?: string };
+      console.error("Admin Auth failed:", err);
+      setError(authError.message || 'Invalid admin email or password.');
+    } finally {
+      setIsAdminLoading(false);
     }
   };
 
@@ -241,20 +247,20 @@ export const LoginModal: React.FC<LoginModalProps> = ({
               <div className="space-y-3.5 text-left">
                 {/* Username */}
                 <div className="space-y-1">
-                  <label className="text-[10px] font-black text-gray-400 uppercase tracking-wider">Username</label>
+                  <label className="text-[10px] font-black text-gray-400 uppercase tracking-wider">Email Address</label>
                   <div className="flex border border-gray-250 rounded-lg overflow-hidden focus-within:border-brand-blue focus-within:ring-1 focus-within:ring-blue-100 transition-all bg-white">
                     <div className="border-r border-gray-200 px-2.5 py-2 text-gray-400 flex items-center bg-gray-50">
                       <User size={13} />
                     </div>
                     <input
-                      type="text"
+                      type="email"
                       required
                       value={adminUser}
                       onChange={(e) => {
                         setAdminUser(e.target.value);
                         if (error) setError('');
                       }}
-                      placeholder="Enter admin username"
+                      placeholder="Enter admin email"
                       className="flex-1 bg-white text-gray-800 text-xs font-semibold px-2.5 py-2 focus:outline-none placeholder-gray-400"
                     />
                   </div>
@@ -287,9 +293,17 @@ export const LoginModal: React.FC<LoginModalProps> = ({
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-brand-blue hover:bg-brand-blue-dark text-white rounded-lg py-2.5 text-xs font-bold uppercase tracking-wider transition-all shadow-sm hover:shadow cursor-pointer select-none active:scale-98"
+                disabled={isAdminLoading}
+                className="w-full bg-brand-blue hover:bg-brand-blue-dark text-white rounded-lg py-2.5 text-xs font-bold uppercase tracking-wider transition-all shadow-sm hover:shadow cursor-pointer select-none active:scale-98 flex items-center justify-center"
               >
-                Log In as Admin
+                {isAdminLoading ? (
+                  <>
+                    <Loader size={13} className="animate-spin mr-1" />
+                    <span>Signing In...</span>
+                  </>
+                ) : (
+                  <span>Log In as Admin</span>
+                )}
               </button>
             </form>
           )}
