@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /admin/
-Disallow: /checkout
-
-Sitemap: https://ks-demo.web.app/sitemap.xml
